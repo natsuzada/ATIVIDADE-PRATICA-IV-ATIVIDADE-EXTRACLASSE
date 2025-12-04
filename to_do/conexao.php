@@ -14,12 +14,6 @@ if($link === false){
     die("ERRO: Não foi possível conectar ao banco de dados. " . mysqli_connect_error());
 }
 
-/**
- * @param string
- * @param string
- * @param array
- * @return mysqli_result|bool
- */
 function execute_query($sql, $types, $params, $link) {
     if ($stmt = mysqli_prepare($link, $sql)) {
         if (!empty($types) && !empty($params)) {
@@ -46,4 +40,5 @@ function execute_query($sql, $types, $params, $link) {
         return false;
     }
 }
+
 ?>
